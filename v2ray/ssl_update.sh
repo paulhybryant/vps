@@ -14,6 +14,7 @@ sleep 1
   # -d baidupcs.xn--4gqp3kj4hgvhbnaj0m7o1g.cn \
   # -d calibre.xn--4gqp3kj4hgvhbnaj0m7o1g.cn \
   # -d nextcloud.xn--4gqp3kj4hgvhbnaj0m7o1g.cn \
+  # -d rsshub.xn--4gqp3kj4hgvhbnaj0m7o1g.cn \
   # -d www.xn--4gqp3kj4hgvhbnaj0m7o1g.cn \
   # -d zsxq.xn--4gqp3kj4hgvhbnaj0m7o1g.cn \
   # --standalone -k ec-256 --force
@@ -26,6 +27,7 @@ sleep 1
   -d baidupcs.xn--4gqp3kj4hgvhbnaj0m7o1g.cn \
   -d calibre.xn--4gqp3kj4hgvhbnaj0m7o1g.cn \
   -d nextcloud.xn--4gqp3kj4hgvhbnaj0m7o1g.cn \
+  -d rsshub.xn--4gqp3kj4hgvhbnaj0m7o1g.cn \
   -d www.xn--4gqp3kj4hgvhbnaj0m7o1g.cn \
   -d zsxq.xn--4gqp3kj4hgvhbnaj0m7o1g.cn \
   --fullchainpath /data/v2ray.crt --keypath /data/v2ray.key --ecc
