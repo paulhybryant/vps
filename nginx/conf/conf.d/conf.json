@@ -1,0 +1,92 @@
+[
+  {
+    "app": "kod",
+    "additional_configs" : ["client_max_body_size 64M"],
+    "locations" : [
+      {
+        "location": "/",
+        "host": "http://paulhybryant.myqnapcloud.com:8006"
+      }
+    ]
+  },
+  {
+    "app": "rsshub",
+    "locations" : [
+      {
+        "location": "/",
+        "host": "http://localhost:1200"
+      }
+    ]
+  },
+  {
+    "app": "ttrss",
+    "additional_configs" : [
+      "client_max_body_size 64M",
+      "client_body_buffer_size 128k",
+      "proxy_buffer_size 4k",
+      "proxy_buffers 4 32k",
+      "proxy_busy_buffers_size 64k",
+      "proxy_temp_file_write_size  64k"
+    ],
+    "locations" : [
+      {
+        "location": "/",
+        "host": "http://localhost:1280"
+      }
+    ]
+  },
+  {
+    "app": "nextcloud",
+    "locations" : [
+      {
+        "location": "/",
+        "host": "https://localhost:8443"
+      }
+    ]
+  },
+  {
+    "app": "aria2",
+    "locations" : [
+      {
+        "location": "/",
+        "host": "http://paulhybryant.myqnapcloud.com:8005"
+      },
+      {
+        "location": "/jsonrpc",
+        "host": "http://paulhybryant.myqnapcloud.com:6800/jsonrpc"
+      }
+    ]
+  },
+  {
+    "app": "calibre",
+    "additional_configs" : ["client_max_body_size 64M"],
+    "locations" : [
+      {
+        "location": "/",
+        "host": "http://paulhybryant.myqnapcloud.com:8003"
+      }
+    ]
+  },
+  {
+    "app": "www",
+    "locations" : [
+      {
+        "location": "/a955ffa39/",
+        "host": "http://127.0.0.1:28749"
+      }
+    ]
+  },
+  {
+    "app": "zsxq",
+    "additional_configs" : ["return 301 https://wx.zsxq.com/dweb2/index/group/15284811122152"]
+  },
+  {
+    "app": "baidupcs",
+    "locations" : [
+      {
+        "location": "/",
+        "host": "http://127.0.0.1:5299"
+      }
+    ]
+  }
+]
