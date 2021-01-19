@@ -11,6 +11,7 @@
   },
   {
     "app": "rsshub",
+    "cmd": "docker run -d --name rsshub -e NEWRANK_COOKIE=token=9A95F5CDAFB9418F85D2E2DF1661DF7B -p 1200:1200 diygod/rsshub",
     "locations" : [
       {
         "location": "/",
@@ -86,6 +87,20 @@
       {
         "location": "/",
         "host": "http://127.0.0.1:5299"
+      }
+    ]
+  },
+  {
+    "app": "google",
+    "cmd": "docker run -d --publish 8000:20080 --restart=always jokester/google-reverse-proxy",
+    "locations" : [
+      {
+        "location": "/",
+        "host": "http://localhost:8000"
+      },
+      {
+        "location": "/scholar",
+        "host": "http://localhost:8000/scholar"
       }
     ]
   }
