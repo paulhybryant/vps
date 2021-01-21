@@ -2,10 +2,11 @@
   {
     "app": "kod",
     "additional_configs" : ["client_max_body_size 64M"],
+    "cmd": "docker run -d -p 8006:80 -v ~/docker/kodbox/data:/var/www/html kodcloud/kodbox:v1.15",
     "locations" : [
       {
         "location": "/",
-        "host": "http://paulhybryant.myqnapcloud.com:8006"
+        "host": "http://localhost:8006"
       }
     ]
   },
@@ -21,6 +22,7 @@
   },
   {
     "app": "ttrss",
+    "cmd": "docker-compose -f ~/docker/ttrss/docker-compose.yml up -d",
     "additional_configs" : [
       "client_max_body_size 64M",
       "client_body_buffer_size 128k",
@@ -47,14 +49,15 @@
   },
   {
     "app": "aria2",
+    "cmd": "docker-compose -f ~/docker/aria2/aria2-pro.yml up -d",
     "locations" : [
       {
         "location": "/",
-        "host": "http://paulhybryant.myqnapcloud.com:8005"
+        "host": "http://localhost:6880"
       },
       {
         "location": "/jsonrpc",
-        "host": "http://paulhybryant.myqnapcloud.com:6800/jsonrpc"
+        "host": "http://localhost:6800/jsonrpc"
       }
     ]
   },
