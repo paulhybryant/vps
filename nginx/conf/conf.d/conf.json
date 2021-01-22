@@ -12,6 +12,7 @@
   },
   {
     "app": "rsshub",
+    "disabled": true,
     "cmd": "docker run -d --name rsshub -e NEWRANK_COOKIE=token=9A95F5CDAFB9418F85D2E2DF1661DF7B -p 1200:1200 diygod/rsshub",
     "locations" : [
       {
@@ -22,6 +23,7 @@
   },
   {
     "app": "ttrss",
+    "disabled": true,
     "cmd": "docker-compose -f ~/docker/ttrss/docker-compose.yml up -d",
     "additional_configs" : [
       "client_max_body_size 64M",

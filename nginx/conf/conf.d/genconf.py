@@ -23,9 +23,15 @@ template = env.get_template(template_file)
 # now create the templates
 print("Create templates...")
 for app in apps:
-    result = template.render(app)
-    f = open("%s.conf" % app["app"], "w")
-    f.write(result)
-    f.close()
-    print("Configuration '%s' created..." % (app['app'] + ".conf"))
+    path = app['app'] + ".conf"
+    if "disabled" in app:
+        if os.path.exists(path):
+            os.remove(path)
+            print("Remove configuration '%s'..." % path)
+    else:
+        result = template.render(app)
+        f = open("%s.conf" % app["app"], "w")
+        f.write(result)
+        f.close()
+        print("Configuration '%s' created..." % path)
 print("DONE")
