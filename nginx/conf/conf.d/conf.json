@@ -42,6 +42,8 @@
   },
   {
     "app": "nextcloud",
+    "cmd": "docker run -d --name nextcloud -p 8443:443 nextcloud",
+    "additional_configs" : ["client_max_body_size 64M"],
     "locations" : [
       {
         "location": "/",
