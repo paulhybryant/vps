@@ -1,0 +1,79 @@
+{
+    "log": {
+        "access": "",
+        "error": "",
+        "loglevel": "error"
+    },
+    "inbounds": [
+        {
+            "tag": "socks-in",
+            "port": 1080,
+            "listen": "::",
+            "protocol": "socks",
+            "settings": {
+                "auth": "noauth",
+                "udp": true,
+                "ip": "127.0.0.1"
+            }
+        },
+        {
+            "tag": "http-in",
+            "port": 8123,
+            "listen": "::",
+            "protocol": "http"
+        }
+    ],
+    "outbounds": [
+        {
+            "protocol": "vmess",
+            "settings": {
+                "vnext": [
+                    {
+                        "address": "www.xn--4gqp3kj4hgvhbnaj0m7o1g.cn",
+                        "port": 443,
+                        "users": [
+                            {
+                                "email": "user@v2ray.com",
+                                "id": "8e6fbab2-5db6-4c9e-b28c-dfb7c92a65a3",
+                                "alterId": 2,
+                                "security": "auto"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "ws",
+                "security": "tls",
+                "tlsSettings": {
+                    "allowInsecure": true,
+                    "serverName": "www.xn--4gqp3kj4hgvhbnaj0m7o1g.cn"
+                },
+                "wsSettings": {
+                    "connectionReuse": true,
+                    "path": "/a955ffa39/",
+                    "headers": {
+                        "Host": "www.xn--4gqp3kj4hgvhbnaj0m7o1g.cn"
+                    }
+                }
+            },
+            "mux": {
+                "enabled": true
+            },
+            "tag": "proxy"
+        },
+        {
+            "protocol": "freedom",
+            "tag": "direct",
+            "settings": {
+                "domainStrategy": "UseIP"
+            }
+        }
+    ],
+    "dns": {
+        "servers": [
+            "1.0.0.1",
+            "localhost"
+        ]
+    }
+}
